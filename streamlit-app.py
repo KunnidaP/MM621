@@ -40,8 +40,8 @@ def train_model():
     df = create_mock_data()
   else:
     df = pd.read_csv('customer_churn_mock.csv')
-
-  x = df.drop('Churn', axis=1)
+    
+  x = df['Age', 'Tenure_Months','Monthly_Charge', 'Support_Tickets']]
   y = df['Churn']
 
   model = RandomForestClassifier(n_estimators=100, random_state=42)
@@ -72,6 +72,8 @@ input_data = pd.DataFrame({
     'Monthly_Charge': [charge],
     'Support_Tickets': [tickets]
 })
+
+input_data = input_data[EXPECTED_FEATURES]
 
 prediction = model.predict(input_data)[0]
 probability = model.predict_proba(input_data)[0][1]
