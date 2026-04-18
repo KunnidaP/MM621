@@ -73,8 +73,6 @@ input_data = pd.DataFrame({
     'Support_Tickets': [tickets]
 })
 
-input_data = input_data[EXPECTED_FEATURES]
-
 prediction = model.predict(input_data)[0]
 probability = model.predict_proba(input_data)[0][1]
 
