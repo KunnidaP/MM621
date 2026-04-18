@@ -41,7 +41,7 @@ def train_model():
   else:
     df = pd.read_csv('customer_churn_mock.csv')
     
-  x = df['Age', 'Tenure_Months','Monthly_Charge', 'Support_Tickets']]
+  x = df['Age', 'Tenure_Months','Monthly_Charge', 'Support_Tickets']
   y = df['Churn']
 
   model = RandomForestClassifier(n_estimators=100, random_state=42)
